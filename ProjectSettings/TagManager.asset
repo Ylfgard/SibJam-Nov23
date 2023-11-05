@@ -8,6 +8,7 @@ TagManager:
   - Picture
   - RopePoint
   - BackButton
+  - RopeObj
   layers:
   - Default
   - TransparentFX
@@ -44,6 +45,9 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Place
+    uniqueID: 4043950117
     locked: 0
   - name: Picture
     uniqueID: 3571258517
