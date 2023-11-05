@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
 
 public class HintOption : MonoBehaviour
 {
@@ -8,5 +7,6 @@ public class HintOption : MonoBehaviour
     public void AddNewPhoto()
     {
         Instantiate(_photo);
+        Destroy(gameObject);
     }
 }

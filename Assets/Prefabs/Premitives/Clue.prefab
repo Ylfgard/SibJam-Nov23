@@ -175,6 +175,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _toggle: {fileID: 4163797279703136064}
+  _hintOption: {fileID: 11400000, guid: 1466fe9fca8b91d4eba5f71ed7655452, type: 2}
   _cluesData:
   - _suspect: {fileID: 11400000, guid: da23c194678b7994a9d275213231ba38, type: 2}
     _value: 1
