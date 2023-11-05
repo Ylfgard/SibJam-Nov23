@@ -10,8 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cd93162e9e4bb5748bab7fe523cd32c7, type: 3}
-  m_Name: FirstSuspect
+  m_Name: Tomara
   m_EditorClassIdentifier: 
-  _crimeChronology:
-  - {fileID: 11400000, guid: 9f0909a5d2f53364ca50594657ceacd5, type: 2}
-  - {fileID: 11400000, guid: b62ce71e3782cf241bc86bb727589635, type: 2}
+  _crimeChronology: []

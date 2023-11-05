@@ -8,6 +8,7 @@ namespace Detective.Clues
     {
         [SerializeField] private Toggle _toggle;
         [SerializeField] private HintOptionSO _hintOption;
+        [SerializeField] private GameObject _secretSuspect;
         [SerializeField] private ClueData[] _cluesData;
 
         private bool _hintNotAdded;
@@ -24,7 +25,13 @@ namespace Detective.Clues
             {
                 foreach (var data in _cluesData)
                     CluesHandler.Instance.ChangeSuspectClueValue(data.Suspect, data.Value);
-                if (_hintNotAdded)
+
+                if (_secretSuspect != null && _secretSuspect.activeSelf == false)
+                {
+                    _secretSuspect.SetActive(true);
+                }
+
+                if (_hintOption != null && _hintNotAdded)
                 {
                     HintsHandler.Instance.AddHintOption(_hintOption);
                     _hintNotAdded = false;
