@@ -24,6 +24,10 @@ public class CameraCintrol : MonoBehaviour
             
             transform.position = Vector3.Lerp(transform.position, Board.transform.position, Time.deltaTime / duration );
             Camera.main.orthographicSize = Mathf.Lerp(Camera.main.orthographicSize, 5.5f, Time.deltaTime / duration);
+            if(Camera.main.orthographicSize < 5.6f)
+            {
+                BoardCntrl.SetActiveBack();
+            }
             
         }
         else

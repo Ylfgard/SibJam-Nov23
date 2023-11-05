@@ -6,14 +6,23 @@ using UnityEngine.EventSystems;
 public class DragSprites : MonoBehaviour
 {
     public bool isDragging = false;
+    
     private Vector3 offset;
-
+    GameObject RopePoint;
     public BoardZoom BoardCntrl;
+    public bool returnPicture = false;
+    float duration = 0.5f;
+    private void Start()
+    {
+        BoardCntrl = GameObject.Find("Board").GetComponent<BoardZoom>();
+        RopePoint = transform.GetChild(0).gameObject;
+    }
+
     private void Update()
     {
-        if (BoardCntrl.isZoom)
-        {
-            GetComponent<Collider2D>().enabled = true;
+        
+        
+            
             if (Input.GetMouseButtonDown(0) )
             {
                 Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -35,38 +44,25 @@ public class DragSprites : MonoBehaviour
                 isDragging = false;
             }
 
-        }
 
-        else
-            GetComponent<Collider2D>().enabled = false;
-    }
-    private void Start()
-    {
-        BoardCntrl = GameObject.Find("Board").GetComponent<BoardZoom>();
-    }
-    private void OnMouseDown()
-    {
-        
-        if (Input.GetMouseButton(0) && BoardCntrl.isZoom)
+
+
+        Debug.Log(RopePoint.GetComponent<RopePointControl>().ofBoard);
+        if(!isDragging && !RopePoint.GetComponent<RopePointControl>().ofBoard)
         {
-
-            isDragging = true;
-            offset = transform.position - GetMouseWorldPosition();
+            returnPicture = true;
         }
-    }
-
-    private void OnMouseDrag()
-    {
-        if (isDragging)
+        if(returnPicture)
         {
-            transform.position = GetMouseWorldPosition() + offset;
+            transform.position = Vector2.Lerp(transform.position, BoardCntrl.DefaultPicturePos, Time.deltaTime / duration);
+            if(Vector2.Distance(transform.position, BoardCntrl.DefaultPicturePos) < 0.01 || isDragging)
+            {
+                returnPicture = false;
+            }
         }
     }
-
-    private void OnMouseUp()
-    {
-        isDragging = false;
-    }
+    
+    
 
     private Vector3 GetMouseWorldPosition()
     {

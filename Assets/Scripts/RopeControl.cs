@@ -19,12 +19,13 @@ public class RopeControl : MonoBehaviour
     }
     void Update()
     {
+        
         if (Input.GetMouseButtonDown(0))  // Обработка отжатия левой кнопки мыши
         {
             Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             RaycastHit2D hit = Physics2D.Raycast(mousePosition, Vector2.zero);
-            Debug.Log(hit.collider);
+            
             if (hit.collider.GetComponent<RopePointControl>())
             {
                 if (hit.collider.GetComponent<RopePointControl>().NumberOfConnections < 2)
