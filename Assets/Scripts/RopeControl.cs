@@ -30,7 +30,7 @@ public class RopeControl : MonoBehaviour
             {
                 if (hit.collider.GetComponent<RopePointControl>().NumberOfConnections < 2)
                 {
-                    hit.collider.GetComponent<RopePointControl>().NumberOfConnections += 1;
+                    //hit.collider.GetComponent<RopePointControl>().NumberOfConnections += 1;
                     currentRopeObj = Instantiate(RopeObjPrefab, Vector2.zero, Quaternion.identity);
                     currentRopeObj.GetComponent<LineRenderer>().SetPosition(0, hit.collider.transform.position);
                     currentRopeObj.GetComponent<RopeObjControl>().obj1 = hit.collider.gameObject;
@@ -42,7 +42,7 @@ public class RopeControl : MonoBehaviour
         }
         if (Input.GetMouseButton(0) && drag)
         {
-            currentRopeObj.GetComponent<LineRenderer>().SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            currentRopeObj.GetComponent<LineRenderer>().SetPosition(1, Camera.main.ScreenToWorldPoint(Input.mousePosition) );
         }
         if (Input.GetMouseButtonUp(0) && drag)
         {
@@ -54,9 +54,9 @@ public class RopeControl : MonoBehaviour
             {
                 if (hit.collider.GetComponent<RopePointControl>().NumberOfConnections < 2)
                 {
-                    hit.collider.GetComponent<RopePointControl>().NumberOfConnections += 1;
+                    //hit.collider.GetComponent<RopePointControl>().NumberOfConnections += 1;
                     postRopePoint = hit.collider.gameObject;
-                    currentRopeObj.GetComponent<LineRenderer>().SetPosition(1, hit.collider.transform.position);
+                    currentRopeObj.GetComponent<LineRenderer>().SetPosition(1, hit.collider.transform.position );
                     currentRopeObj.GetComponent<RopeObjControl>().obj2 = hit.collider.gameObject;
                     drag = false;
                     Debug.Log("End");

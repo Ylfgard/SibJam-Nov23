@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6754069083894818924}
   m_Layer: 0
   m_Name: RopeEmptyGO
-  m_TagString: Untagged
+  m_TagString: RopeObj
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ LineRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1351937009
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Positions:
   - {x: 0, y: 0, z: 0}
