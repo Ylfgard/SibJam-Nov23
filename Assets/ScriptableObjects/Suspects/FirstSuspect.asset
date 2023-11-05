@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd93162e9e4bb5748bab7fe523cd32c7, type: 3}
   m_Name: FirstSuspect
   m_EditorClassIdentifier: 
+  _crimeChronology:
+  - {fileID: 11400000, guid: 9f0909a5d2f53364ca50594657ceacd5, type: 2}

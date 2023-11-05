@@ -9,7 +9,7 @@ namespace Detective.Clues
         [SerializeField] private SuspectSO _suspect;
         [SerializeField] private int _value;
 
-        public string SuspectName => _suspect.Name;
+        public SuspectSO Suspect => _suspect;
         public int Value => _value;
     }
 }

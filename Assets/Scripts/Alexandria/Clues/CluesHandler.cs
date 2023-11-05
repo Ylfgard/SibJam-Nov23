@@ -8,7 +8,7 @@ namespace Detective.Clues
     {
         [SerializeField] private SuspectSO[] _suspects;
 
-        private Dictionary<string, SuspectCluesData> _suspectsData;
+        private Dictionary<SuspectSO, SuspectCluesData> _suspectsData;
 
         private static CluesHandler _instance;
         public static CluesHandler Instance => _instance;
@@ -20,17 +20,26 @@ namespace Detective.Clues
             else
                 _instance = this;
 
-            _suspectsData = new Dictionary<string, SuspectCluesData>();
+            _suspectsData = new Dictionary<SuspectSO, SuspectCluesData>();
             foreach (var suspect in _suspects)
-                _suspectsData.Add(suspect.Name, new SuspectCluesData());
+                _suspectsData.Add(suspect, new SuspectCluesData());
         }
 
-        public void ChangeSuspectClueValue(string name, int value)
+        public void ChangeSuspectClueValue(SuspectSO suspect, int value)
         {
-            if (_suspectsData.TryGetValue(name, out SuspectCluesData suspect))
-                suspect.ChangeCluesValue(value);
+            if (_suspectsData.TryGetValue(suspect, out SuspectCluesData data))
+                data.ChangeCluesValue(value);
             else
-                Debug.LogError("Wrong name: " + name);
+                Debug.LogError("Wrong name: " + suspect.name);
+        }
+
+        public int GetSuspectClueValue(SuspectSO suspect)
+        {
+            if(_suspectsData.TryGetValue(suspect, out SuspectCluesData data))
+                return data.CluesValue;
+            else
+                Debug.LogError("Wrong name: " + suspect.name);
+            return 0;
         }
     }
 }
