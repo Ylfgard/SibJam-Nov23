@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c59f17b5ee869d4f9454f23e23a2ba6, type: 3}
   m_Name: BarHint
   m_EditorClassIdentifier: 
-  _prefab: {fileID: 0}
+  _prefab: {fileID: 2185960526753489607, guid: 13af284504a7aab41aa41078a508c033, type: 3}

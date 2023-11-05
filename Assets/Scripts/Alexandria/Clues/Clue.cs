@@ -25,7 +25,10 @@ namespace Detective.Clues
                 foreach (var data in _cluesData)
                     CluesHandler.Instance.ChangeSuspectClueValue(data.Suspect, data.Value);
                 if (_hintNotAdded)
+                {
                     HintsHandler.Instance.AddHintOption(_hintOption);
+                    _hintNotAdded = false;
+                }
             }
             else
             {

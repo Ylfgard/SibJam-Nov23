@@ -6,9 +6,9 @@ namespace Detective.Hints
     public class HintData
     {
         [SerializeField] private HintOptionSO _option;
-        [SerializeField] private Hint _hint;
+        [SerializeField] private HintWindow _hint;
 
         public HintOptionSO Option => _option;
-        public Hint Hint => _hint;
+        public HintWindow Hint => _hint;
     }
 }
