@@ -1,25 +1,24 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
-
+using System.Linq;
 public class PicturePackControl : MonoBehaviour
 {
     // Start is called before the first frame update
     public Vector2 StartListPos;
-    public GameObject[] PicturesList = new GameObject[10];
+    public List<GameObject> PicturesList;
     public bool ListActive = false;
     public float dx = 0.2f,dy = 1f;
     void Start()
     {
+       
         StartListPos = transform.position;
         // Получаем список объектов с заданным тэгом
-        PicturesList = GameObject.FindGameObjectsWithTag("Picture");
+        PicturesList = GameObject.FindGameObjectsWithTag("Picture").ToList();
 
         // Выводим информацию о найденных объектах
-        foreach (GameObject obj in PicturesList)
-        {
-            
-        }
+        
     }
 
     // Update is called once per frame
@@ -86,5 +85,10 @@ public class PicturePackControl : MonoBehaviour
             i++;
         }
         PicturesList[i] = picture;
+    }
+    public void AddPictureToList(GameObject picture)
+    {
+        PicturesList.Add(picture);
+        
     }
 }

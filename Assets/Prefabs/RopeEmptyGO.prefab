@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8954901680203008763}
   - component: {fileID: 981507215361727782}
   - component: {fileID: 6754069083894818924}
+  - component: {fileID: 5598716191418678236}
   m_Layer: 0
   m_Name: RopeEmptyGO
   m_TagString: RopeObj
@@ -47,6 +48,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   obj1: {fileID: 0}
   obj2: {fileID: 0}
+  startRope: {x: 0, y: 0, z: 0}
+  endRope: {x: 0, y: 0, z: 0}
+  height: -0.7
+  resolution: 30
 --- !u!120 &6754069083894818924
 LineRenderer:
   serializedVersion: 2
@@ -151,3 +156,25 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!64 &5598716191418678236
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3130437846976548038}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 5
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}

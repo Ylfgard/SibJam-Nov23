@@ -21,8 +21,10 @@ public class DragSprites : MonoBehaviour
     public bool inList = false;
     private void Start()
     {
+
         BoardCntrl = GameObject.Find("Board").GetComponent<BoardZoom>();
         RopePoint = transform.GetChild(0).gameObject;
+        FindObjectOfType<PicturePackControl>().AddPictureToList(gameObject);
     }
 
     private void Update()
