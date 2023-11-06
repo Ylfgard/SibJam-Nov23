@@ -7,7 +7,7 @@ namespace Detective.Hints
     {
         [SerializeField] private HintData[] _hintsData;
 
-        private Dictionary<HintOptionSO, Hint> _hints;
+        private Dictionary<HintOptionSO, HintWindow> _hints;
 
         private static HintsHandler _instance;
         public static HintsHandler Instance => _instance;
@@ -19,7 +19,7 @@ namespace Detective.Hints
             else
                 _instance = this;
 
-            _hints = new Dictionary<HintOptionSO, Hint>();
+            _hints = new Dictionary<HintOptionSO, HintWindow>();
             foreach (var data in _hintsData)
                 _hints.Add(data.Option, data.Hint);
         }
